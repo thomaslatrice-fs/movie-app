@@ -7,7 +7,12 @@ const movieRoutes = require("./routes/movieRoutes");
 connectDB();
 
 const app = express();
-
+app.use((req, res, next) => {
+  console.log(
+    `${new Date().toISOString()} ${req.method} ${req.originalUrl} | Origin: ${req.headers.origin}`,
+  );
+  next();
+});
 app.use(cors());
 
 // Chrome's Private Network Access check requires this explicit header
