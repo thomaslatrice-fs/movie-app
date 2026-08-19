@@ -1,0 +1,259 @@
+:root {
+  --cream: #fefae0;
+  --sage: #ccd5ae;
+  --terracotta: #d4a373;
+  --olive: #283618;
+  --olive-soft: #606c38;
+  --white: #ffffff;
+  --danger: #b3541e;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--olive);
+  font-family: var(--font-body);
+}
+
+.app-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--olive);
+  padding: 1rem 0;
+}
+
+.navbar-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cream);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--sage);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--cream);
+}
+
+.nav-links a.active {
+  color: var(--cream);
+  border-bottom-color: var(--terracotta);
+}
+
+/* Page header */
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  margin: 0 0 0.35rem;
+  color: var(--olive);
+}
+
+.page-subtitle {
+  margin: 0;
+  color: var(--olive-soft);
+  font-size: 1rem;
+}
+
+/* Movie grid + cards */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.movie-card {
+  background-color: var(--white);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(40, 54, 24, 0.08);
+  border: 1px solid rgba(40, 54, 24, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.movie-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.movie-card-top h3 {
+  font-family: var(--font-display);
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--olive);
+}
+
+.genre-pill {
+  background-color: var(--sage);
+  color: var(--olive);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.movie-year {
+  margin: 0;
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+.movie-added {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #8a8f7d;
+}
+
+.movie-card-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--olive);
+  color: var(--cream);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: var(--sage);
+  color: var(--olive);
+  flex: 1;
+}
+
+.btn-secondary:hover {
+  opacity: 0.85;
+}
+
+.btn-danger {
+  background-color: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  flex: 1;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger);
+  color: var(--white);
+}
+
+/* Form */
+.movie-form {
+  background-color: var(--white);
+  border-radius: 14px;
+  padding: 1.75rem;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 0 2px 10px rgba(40, 54, 24, 0.08);
+}
+
+.movie-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--olive-soft);
+  margin-top: 0.6rem;
+}
+
+.movie-form input {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #d8dcc8;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background-color: var(--cream);
+  color: var(--olive);
+}
+
+.movie-form input:focus {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 1px;
+}
+
+.movie-form .btn {
+  margin-top: 1.25rem;
+}
+
+/* Status + empty states */
+.status-message {
+  color: var(--olive-soft);
+  font-size: 0.95rem;
+}
+
+.status-error {
+  color: var(--danger);
+}
+
+.empty-state {
+  color: var(--olive-soft);
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
