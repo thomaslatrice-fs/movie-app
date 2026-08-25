@@ -1,11 +1,13 @@
 :root {
-  --cream: #fefae0;
-  --sage: #ccd5ae;
-  --terracotta: #d4a373;
-  --olive: #283618;
-  --olive-soft: #606c38;
+  --cream: #faf3e7;
+  --burgundy: #6b1d2b;
+  --burgundy-deep: #4a1420;
+  --gold: #c9a227;
+  --gold-light: #e8c766;
   --white: #ffffff;
-  --danger: #b3541e;
+  --danger: #a13b2a;
+  --ink: #2b1512;
+  --muted-text: #8a7568;
 
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -18,7 +20,7 @@
 body {
   margin: 0;
   background-color: var(--cream);
-  color: var(--olive);
+  color: var(--ink);
   font-family: var(--font-body);
 }
 
@@ -30,7 +32,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: var(--olive);
+  background-color: var(--burgundy);
   padding: 1rem 0;
 }
 
@@ -56,13 +58,15 @@ body {
 }
 
 .nav-links a {
-  color: var(--sage);
+  color: var(--gold-light);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .nav-links a:hover {
@@ -71,7 +75,7 @@ body {
 
 .nav-links a.active {
   color: var(--cream);
-  border-bottom-color: var(--terracotta);
+  border-bottom-color: var(--gold);
 }
 
 /* Page header */
@@ -83,12 +87,12 @@ body {
   font-family: var(--font-display);
   font-size: 2.25rem;
   margin: 0 0 0.35rem;
-  color: var(--olive);
+  color: var(--burgundy-deep);
 }
 
 .page-subtitle {
   margin: 0;
-  color: var(--olive-soft);
+  color: var(--muted-text);
   font-size: 1rem;
 }
 
@@ -103,8 +107,11 @@ body {
   background-color: var(--white);
   border-radius: 14px;
   padding: 1.25rem;
-  box-shadow: 0 2px 10px rgba(40, 54, 24, 0.08);
-  border: 1px solid rgba(40, 54, 24, 0.08);
+  box-shadow: 0 2px 10px rgba(74, 20, 32, 0.1);
+  border-top: 3px solid var(--gold);
+  border-left: 1px solid rgba(74, 20, 32, 0.08);
+  border-right: 1px solid rgba(74, 20, 32, 0.08);
+  border-bottom: 1px solid rgba(74, 20, 32, 0.08);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -121,12 +128,12 @@ body {
   font-family: var(--font-display);
   margin: 0;
   font-size: 1.15rem;
-  color: var(--olive);
+  color: var(--burgundy-deep);
 }
 
 .genre-pill {
-  background-color: var(--sage);
-  color: var(--olive);
+  background-color: var(--gold-light);
+  color: var(--ink);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.2rem 0.6rem;
@@ -136,14 +143,14 @@ body {
 
 .movie-year {
   margin: 0;
-  color: var(--terracotta);
+  color: var(--burgundy);
   font-weight: 600;
 }
 
 .movie-added {
   margin: 0;
   font-size: 0.8rem;
-  color: #8a8f7d;
+  color: var(--muted-text);
 }
 
 .movie-card-actions {
@@ -164,7 +171,9 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.15s ease, transform 0.05s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.05s ease;
 }
 
 .btn:active {
@@ -172,8 +181,8 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--olive);
-  color: var(--cream);
+  background-color: var(--burgundy);
+  color: var(--gold-light);
 }
 
 .btn-primary:hover {
@@ -181,8 +190,8 @@ body {
 }
 
 .btn-secondary {
-  background-color: var(--sage);
-  color: var(--olive);
+  background-color: var(--gold-light);
+  color: var(--ink);
   flex: 1;
 }
 
@@ -217,22 +226,22 @@ body {
 .movie-form label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--olive-soft);
+  color: var(--burgundy);
   margin-top: 0.6rem;
 }
 
 .movie-form input {
   padding: 0.6rem 0.75rem;
   border-radius: 8px;
-  border: 1px solid #d8dcc8;
+  border: 1px solid #e6d9c3;
   font-family: var(--font-body);
   font-size: 0.95rem;
   background-color: var(--cream);
-  color: var(--olive);
+  color: var(--ink);
 }
 
 .movie-form input:focus {
-  outline: 2px solid var(--terracotta);
+  outline: 2px solid var(--gold);
   outline-offset: 1px;
 }
 
@@ -242,7 +251,7 @@ body {
 
 /* Status + empty states */
 .status-message {
-  color: var(--olive-soft);
+  color: var(--burgundy);
   font-size: 0.95rem;
 }
 
@@ -251,7 +260,7 @@ body {
 }
 
 .empty-state {
-  color: var(--olive-soft);
+  color: var(--burgundy);
   background-color: var(--white);
   border-radius: 12px;
   padding: 2rem;
